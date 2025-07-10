@@ -1,0 +1,8 @@
+---
+title: "R code for CoMPaSS"
+sidebar: paper
+---
+
+All the R code including simulation parts and real data analysis have been post in the webpage, please go to sidebar to review.
+
+------------------------------------------------------------------------

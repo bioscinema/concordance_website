@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ComPASS Paper tutorial"
+  navbar:
+    left:
+      - href: index.qmd
+        text: ComPASS R package
+      - href: paper_code/about.qmd
+        text: Paper Code Go-through
+    right:
+      - icon: github
+        href: https://github.com
+  # sidebar:
+  #   style: "docked"
+  #   search: true
+  #   contents: []
+  # sidebar:
+  #   - id: paper
+  #     collapse-level: 2
+  #     contents:
+  #     - paper_code/simulation.qmd
+  #     - paper_code/Real_data.qmd
+  # page-navigation: FALSE
+  sidebar:
+    # 1) a “main” sidebar (here empty, so it effectively hides)
+    - id: main
+      collapse-level: 2
+      contents: []
+
+    # 2) your Paper sidebar, only shown when you request `sidebar: paper`
+    - id: paper
+      collapse-level: 2
+      contents:
+        - paper_code/simulation.qmd
+        - paper_code/Real_data.qmd
+
+  page-navigation: false
+  
+
+format:
+  html:
+    theme: yeti
+    css: styles.css
+    toc: true
+
+editor: visual
+
