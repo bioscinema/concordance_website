@@ -1,0 +1,89 @@
+---
+title: "Power analysis and sample size calculation"
+sidebar: false
+format:
+  html:
+    # turn on page‐local TOC…
+    toc: true
+    # …and put it in the left‐hand sidebar
+    toc-location: right
+    # how many heading levels to include
+    toc-depth: 2
+---
+```{r eval=FALSE}
+# Load the package containing powerCalculation (adjust if needed)
+library(concordance)
+```
+
+# Power Calculation
+
+The `powerCalculation()` function in the CoMPASS R package offers three built-in simulation presets—`gut`, `oral`, and `infant`—and lets you specify your sequencing platform via the `platform` argument: `"amp"` for 16S rRNA amplicon data or `"wgs"` for whole-genome shotgun data.
+
+
+```{r eval=FALSE}
+# Example: Evaluate power for gut data using amplicon sequencing ("amp")
+# with 50 simulation replicates, a significance level of 0.05,
+# 100 samples per simulation, and 200 OTUs simulated with 10% differential abundance.
+result <- powerCalculation(
+  data.type = "gut",     # Choose data type: "gut", "oral", or "infant"
+  method = "amp",        # Choose sequencing method: "amp" (16S) or "wgs" (WGS)
+  nSim = 50,             # Number of simulation replicates
+  alpha = 0.05,          # Significance level
+  nSam = 100,            # Number of samples per simulation replicate
+  nOTU = 200,            # Number of OTUs to simulate
+  diff.otu.pct = 0.1      # Proportion of OTUs that are differentially abundant
+  # All other parameters will use their default values.
+)
+
+# Print the overall estimated power (proportion of replicates with significant results)
+print(result$overall_power)
+
+# Optionally, print the detection indicator for each replicate
+print(result$replicate_power)
+```
+
+# Sample Size Calculation
+
+The `sampleCalculationRange()` function produces a line plot of statistical power across a user-specified range of sample sizes. You can control:
+
+- `lower_bound` & `upper_bound`: the range of desired sample size  
+- `type`: the data type (`gut`, `oral`, and `infant`)  
+- `platform`: the sequencing platform (`"amp"` for 16S rRNA amplicon, `"wgs"` for shotgun)  
+- `nOTU`: the number of OTUs to include in the simulation  
+
+```{r eval=FALSE}
+# Evaluate power for sample sizes from 50 to 200 (in increments of 5)
+# for gut data using the 16S (amplicon) method.
+result <- sampleCalculationRange(
+  lower_bound = 50,
+  upper_bound = 200,
+  data.type = "gut",
+  method = "amp",
+  nSim = 100,       # Number of simulation replicates
+  nOTU = 300,       # Number of OTUs to simulate
+  diff.otu.pct = 0.1  # Proportion of OTUs that are differentially abundant
+)
+
+# Display the results:
+print(result$data)
+print(result$plot)
+
+```
+
+# Price Calculation
+
+Budget considerations are critical: the `priceCalculation()` function estimates the total project cost across a user‐specified range of sample sizes to achieve a desired statistical power.
+
+```{r eval=FALSE}
+# Minimal example call to priceCalculation:
+price_estimates <- priceCalculation(
+  target_power = 0.8,       # Desired power (80%)
+  lower_bound = 50,         # Minimum sample size to consider
+  upper_bound = 200,        # Maximum sample size to consider
+  data.type = "gut",        # Data type ("gut", "oral", or "infant")
+  nOTU=300
+)
+
+# Print the resulting data frame
+print(price_estimates)
+```

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ComPASS - CoMPaSS</title>
+<title>ComPASS - Power analysis and sample size calculation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,22 +57,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,7 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -104,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">ComPASS</span>
     </a>
   </div>
@@ -120,21 +120,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorial">    
         <li>
-    <a class="dropdown-item" href="./paper_code/data_simulation.html" rel="" target="">
+    <a class="dropdown-item" href="../paper_code/data_simulation.html" rel="" target="">
  <span class="dropdown-text">Data simulation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./paper_code/power_and_sample_size.qmd" rel="" target="">
+    <a class="dropdown-item" href="../paper_code/power_and_sample_size.qmd" rel="" target="">
  <span class="dropdown-text">Power analysis &amp; sample size</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./paper_code/concordance_measurement.qmd" rel="" target="">
+    <a class="dropdown-item" href="../paper_code/concordance_measurement.qmd" rel="" target="">
  <span class="dropdown-text">Concordance measurement</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./paper_code/about.html" rel="" target="">
+    <a class="nav-link" href="../paper_code/about.html" rel="" target="">
  <span class="menu-text">Paper Code Go-through</span></a>
   </li>  
 </ul>
@@ -159,14 +159,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link active" data-scroll-target="#table-of-contents">Table of contents</a>
   <ul class="collapse">
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick Start</a></li>
-  <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial">Tutorial</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
-  </ul></li>
+  <li><a href="#power-calculation" id="toc-power-calculation" class="nav-link active" data-scroll-target="#power-calculation">Power Calculation</a></li>
+  <li><a href="#sample-size-calculation" id="toc-sample-size-calculation" class="nav-link" data-scroll-target="#sample-size-calculation">Sample Size Calculation</a></li>
+  <li><a href="#price-calculation" id="toc-price-calculation" class="nav-link" data-scroll-target="#price-calculation">Price Calculation</a></li>
   </ul>
 </nav>
     </div>
@@ -175,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CoMPaSS</h1>
+<h1 class="title">Power analysis and sample size calculation</h1>
 </div>
 
 
@@ -190,93 +186,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>CoMPaSS is A Computational Pipeline for Cross-Platform Concordance Assessment and Navigating Study Design in Microbiome Research</p>
-<hr>
-<p>Microbiome research has become an integral component of modern biomedical science, offering insights that uniquely complement other omics. To characterize microbial dysbiosis and its impact on human health, researchers have widely employed next-generation sequencing (NGS) technologies, including 16S rRNA gene sequencing and shotgun metagenomic sequencing. However, these approaches are susceptible to technological artifacts that may introduce method-specific bias into analyses and undermine the replicability of discoveries. Researchers often struggle to select appropriate sequencing methods during the study design stage, as they strive to optimize the budget, taxonomic resolution, and analytical accuracy. While 16S rRNA sequencing is a cost-effective and reliable method that offers acceptable taxonomic resolution, shotgun metagenomic sequencing provides higher-resolution profiles and functional insights, albeit with increased cost. To address this challenge, we introduce CoMPaSS (Concordance of Microbiome Sequencing Platforms and Study Initiation Strategy), a computational pipeline designed to enable precise and head-to-head comparison of six downstream analytical tools in efficacy and to navigate microbiome study design. CoMPaSS offers a framework for evaluating cross-platform concordance in statistical inference across multiple contexts, from community diversity indices to taxonomic profiling, and offers integrated tools for power analysis, sample size estimation, and cost assessment to support comprehensive study planning. Based on an extensive simulation study of in-silico microbiota and three real-world microbiome studies in population-based cohorts (i.e., ORIGIN, IBD, TEDDY), CoMPaSS reveals desirable concordance between platforms at higher taxonomic levels, but significant discrepancies at finer taxonomic resolutions and among rare taxa—highlighting the importance of sequencing platform selection in determining study outcomes.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="CoMPaSS.pdf" class="img-fluid"></p>
-</figure>
-</div>
-<section id="table-of-contents" class="level1">
-<h1>Table of contents</h1>
-<hr>
-<ol type="1">
-<li><a href="#installation">Installation</a></li>
-<li><a href="#quickstart">Quick Start</a></li>
-<li><a href="#tutorial">Tutorial</a></li>
-<li><a href="#contact">Contact</a></li>
-</ol>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>You can install <strong>CoMPaSS</strong> R package by:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install devtools if you haven't already</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the package from GitHub</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"bioscinema/concordance"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your package</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(CoMPaSS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the package containing powerCalculation (adjust if needed)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(concordance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="quick-start" class="level2">
-<h2 class="anchored" data-anchor-id="quick-start">Quick Start</h2>
-<p>The following code is a quick example of simulating a microbiome dataset. The function <code>SimulateMSeq()</code> will take the estimate parameters, desired sample size, numbers of OTUs, etc. as input to generate simulation. The ComPaSS package ships with pre-configured simulation parameters so you can quickly generate example datasets. If you’d like to simulate using your own feature table, follow these steps below. <strong>Note:</strong> estimating parameters on very large OTU tables can be time-consuming.</p>
+<section id="power-calculation" class="level1">
+<h1>Power Calculation</h1>
+<p>The <code>powerCalculation()</code> function in the CoMPASS R package offers three built-in simulation presets—<code>gut</code>, <code>oral</code>, and <code>infant</code>—and lets you specify your sequencing platform via the <code>platform</code> argument: <code>"amp"</code> for 16S rRNA amplicon data or <code>"wgs"</code> for whole-genome shotgun data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First estimate parameters for our simulation (you can save the parameter as RData to do more simuation in the future)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>para <span class="ot">&lt;-</span> <span class="fu">EstPara</span>(myotu)  <span class="do">##myotu is your otu table in data frame format</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Simulate according to your estimated parameters</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>N <span class="ot">=</span> <span class="dv">206</span> <span class="co">#sample size</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>input.conf <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>input.err <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(N)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>input.diff.otu.pct <span class="ot">=</span> <span class="cn">NULL</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>input.diff.otu.mode <span class="ot">=</span> <span class="st">"user_specified"</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>user_specified_otu <span class="ot">=</span> common_genus[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>input.covariate.eff.mean <span class="ot">=</span> <span class="fl">0.3</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>nSim <span class="ot">=</span> <span class="dv">200</span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Evaluate power for gut data using amplicon sequencing ("amp")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with 50 simulation replicates, a significance level of 0.05,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 100 samples per simulation, and 200 OTUs simulated with 10% differential abundance.</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">powerCalculation</span>(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data.type =</span> <span class="st">"gut"</span>,     <span class="co"># Choose data type: "gut", "oral", or "infant"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"amp"</span>,        <span class="co"># Choose sequencing method: "amp" (16S) or "wgs" (WGS)</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">nSim =</span> <span class="dv">50</span>,             <span class="co"># Number of simulation replicates</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">alpha =</span> <span class="fl">0.05</span>,          <span class="co"># Significance level</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">nSam =</span> <span class="dv">100</span>,            <span class="co"># Number of samples per simulation replicate</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">nOTU =</span> <span class="dv">200</span>,            <span class="co"># Number of OTUs to simulate</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">diff.otu.pct =</span> <span class="fl">0.1</span>      <span class="co"># Proportion of OTUs that are differentially abundant</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># All other parameters will use their default values.</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="do">## WGS simulation</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>sim_WGS_Genus <span class="ot">&lt;-</span> <span class="fu">replicate</span>(nSim, <span class="fu">list</span>(), <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the overall estimated power (proportion of replicates with significant results)</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result<span class="sc">$</span>overall_power)</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nSim) {</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  sim_WGS_Genus[[i]] <span class="ot">&lt;-</span> <span class="fu">SimulateMSeqU</span>(</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">para =</span> para, <span class="at">nSam =</span> N, <span class="at">nOTU =</span> <span class="fu">nrow</span>(myotu),</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># True signal setting</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff.otu.pct =</span> input.diff.otu.pct, <span class="at">diff.otu.direct =</span> <span class="fu">c</span>(<span class="st">"unbalanced"</span>), </span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">diff.otu.mode =</span> input.diff.otu.mode,</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">user_specified_otu =</span> user_specified_otu ,</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">covariate.type =</span> <span class="st">"binary"</span>, <span class="at">grp.ratio =</span> <span class="dv">1</span>,</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">covariate.eff.mean =</span> input.covariate.eff.mean, <span class="at">covariate.eff.sd =</span> <span class="dv">0</span>,</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Confounder signal setting</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">confounder.type =</span> <span class="st">"none"</span>, <span class="at">conf.cov.cor =</span> <span class="fl">0.6</span>,</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">conf.diff.otu.pct =</span> <span class="dv">0</span>, <span class="at">conf.nondiff.otu.pct =</span> <span class="dv">0</span>,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">confounder.eff.mean =</span> <span class="dv">0</span>, <span class="at">confounder.eff.sd =</span> <span class="dv">0</span>,</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Depth setting</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">depth.mu =</span> <span class="dv">10000</span>, <span class="at">depth.theta =</span> <span class="dv">5</span>, <span class="at">depth.conf.factor =</span> <span class="dv">0</span>,</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">cont.conf =</span> input.conf,<span class="at">epsilon =</span> input.err)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally, print the detection indicator for each replicate</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result<span class="sc">$</span>replicate_power)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="tutorial">Tutorial</h2>
-<p>For the detailed tutorial, you can entered into tutorial from navigation bar. This section provide all the tutorial content summary.</p>
+<section id="sample-size-calculation" class="level1">
+<h1>Sample Size Calculation</h1>
+<p>The <code>sampleCalculationRange()</code> function produces a line plot of statistical power across a user-specified range of sample sizes. You can control:</p>
 <ul>
-<li><a href="./paper_code/data_simulation.html" class="internal">Data simulation</a></li>
-<li>Power analysis and sample size calculation</li>
-<li>Concordance measurement for real data</li>
+<li><code>lower_bound</code> &amp; <code>upper_bound</code>: the range of desired sample size<br>
+</li>
+<li><code>type</code>: the data type (<code>gut</code>, <code>oral</code>, and <code>infant</code>)<br>
+</li>
+<li><code>platform</code>: the sequencing platform (<code>"amp"</code> for 16S rRNA amplicon, <code>"wgs"</code> for shotgun)<br>
+</li>
+<li><code>nOTU</code>: the number of OTUs to include in the simulation</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate power for sample sizes from 50 to 200 (in increments of 5)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for gut data using the 16S (amplicon) method.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sampleCalculationRange</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower_bound =</span> <span class="dv">50</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper_bound =</span> <span class="dv">200</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">data.type =</span> <span class="st">"gut"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"amp"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">nSim =</span> <span class="dv">100</span>,       <span class="co"># Number of simulation replicates</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">nOTU =</span> <span class="dv">300</span>,       <span class="co"># Number of OTUs to simulate</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">diff.otu.pct =</span> <span class="fl">0.1</span>  <span class="co"># Proportion of OTUs that are differentially abundant</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the results:</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result<span class="sc">$</span>data)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result<span class="sc">$</span>plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>Any questions or suggestions on <code>CoMPaSS</code> are welcomed! Please report it on issues, contact Ruitao Liu (<a href="rxl761@case.edu">rxl761@case.edu</a>) or Xi Qiao (<a href="xi.qiao@hci.utah.edu">xi.qiao@hci.utah.edu</a>).</p>
+<section id="price-calculation" class="level1">
+<h1>Price Calculation</h1>
+<p>Budget considerations are critical: the <code>priceCalculation()</code> function estimates the total project cost across a user‐specified range of sample sizes to achieve a desired statistical power.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimal example call to priceCalculation:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>price_estimates <span class="ot">&lt;-</span> <span class="fu">priceCalculation</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">target_power =</span> <span class="fl">0.8</span>,       <span class="co"># Desired power (80%)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower_bound =</span> <span class="dv">50</span>,         <span class="co"># Minimum sample size to consider</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">upper_bound =</span> <span class="dv">200</span>,        <span class="co"># Maximum sample size to consider</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">data.type =</span> <span class="st">"gut"</span>,        <span class="co"># Data type ("gut", "oral", or "infant")</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">nOTU=</span><span class="dv">300</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the resulting data frame</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(price_estimates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

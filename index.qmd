@@ -1,21 +1,90 @@
 ---
-title: "Welcome to CoMPaSS Webpage"
+title: "CoMPaSS"
 sidebar: false
 ---
 
-The Webpage includes all the code used in paper: "CoMPaSS: A Computational Pipeline for Cross-Platform Concordance Assessment and Navigating Study Design in Microbiome Research"
+CoMPaSS is A Computational Pipeline for Cross-Platform Concordance Assessment and Navigating Study Design in Microbiome Research
 
 ------------------------------------------------------------------------
 
-Microbiome research has become an integral component of modern biomedical science, offering insights that uniquely complement other omics. To characterize microbial dysbiosis and its impact on human health, researchers have widely employed next-generation sequencing (NGS) technologies, including 16S rRNA gene sequencing and shotgun metagenomic sequencing. However, these approaches are susceptible to technological artifacts that may introduce method-specific bias into analyses and undermine the replicability of discoveries. Researchers often struggle to select appropriate sequencing methods during the study design stage, as they strive to optimize the budget, taxonomic resolution, and analytical accuracy. While 16S rRNA sequencing is a cost-effective and reliable method that offers acceptable taxonomic resolution, shotgun metagenomic sequencing provides higher-resolution profiles and functional insights, albeit with increased cost. To address this challenge, we introduce CoMPaSS (Concordance of Microbiome Sequencing Platforms and Study Initiation Strategy), a computational pipeline designed to enable precise and head-to-head comparison of six downstream analytical tools in efficacy and to navigate microbiome study design. CoMPaSS offers a framework for evaluating cross-platform concordance in statistical inference across multiple contexts, from community diversity indices to taxonomic profiling, and offers integrated tools for power analysis, sample size estimation, and cost assessment to support comprehensive study planning. Based on an extensive simulation study of in-silico microbiota and three real-world microbiome studies in population-based cohorts (i.e., ORIGIN, IBD, TEDDY), CoMPaSS reveals desirable concordance between platforms at higher taxonomic levels, but significant discrepancies at finer taxonomic resolutions and among rare taxa—highlighting the importance of sequencing platform selection in determining study outcomes.
+Microbiome research has become an integral component of modern biomedical science, offering insights that uniquely complement other omics. To characterize microbial dysbiosis and its impact on human health, researchers have widely employed next-generation sequencing (NGS) technologies, including 16S rRNA gene sequencing and shotgun metagenomic sequencing. However, these approaches are susceptible to technological artifacts that may introduce method-specific bias into analyses and undermine the replicability of discoveries. Researchers often struggle to select appropriate sequencing methods during the study design stage, as they strive to optimize the budget, taxonomic resolution, and analytical accuracy. While 16S rRNA sequencing is a cost-effective and reliable method that offers acceptable taxonomic resolution, shotgun metagenomic sequencing provides higher-resolution profiles and functional insights, albeit with increased cost. To address this challenge, we introduce CoMPaSS (Concordance of Microbiome Sequencing Platforms and Study Initiation Strategy), a computational pipeline designed to enable precise and head-to-head comparison of six downstream analytical tools in efficacy and to navigate microbiome study design. CoMPaSS offers a framework for evaluating cross-platform concordance in statistical inference across multiple contexts, from community diversity indices to taxonomic profiling, and offers integrated tools for power analysis, sample size estimation, and cost assessment to support comprehensive study planning. Based on an extensive simulation study of in-silico microbiota and three real-world microbiome studies in population-based cohorts (i.e., ORIGIN, IBD, TEDDY), CoMPaSS reveals desirable concordance between platforms at higher taxonomic levels, but significant discrepancies at finer taxonomic resolutions and among rare taxa---highlighting the importance of sequencing platform selection in determining study outcomes.
 
-::: callout-note
-## This webpage include
+![](CoMPaSS.pdf){fig-align="center"}
 
-- R code for simulation analysis
+# Table of contents
 
-- R code for real data analysis
+------------------------------------------------------------------------
 
-:::
+1.  [Installation](#installation)
+2.  [Quick Start](#quickstart)
+3.  [Tutorial](#tutorial)
+4.  [Contact](#contact)
 
+## Installation {#installation}
 
+You can install **CoMPaSS** R package by:
+
+```{r eval=FALSE}
+# Install devtools if you haven't already
+install.packages("devtools")
+library(devtools)
+
+# Install the package from GitHub
+install_github("bioscinema/concordance")
+
+# Load your package
+library(CoMPaSS)
+```
+
+## Quick Start
+
+The following code is a quick example of simulating a microbiome dataset. The function `SimulateMSeq()` will take the estimate parameters, desired sample size, numbers of OTUs, etc. as input to generate simulation. The ComPaSS package ships with pre-configured simulation parameters so you can quickly generate example datasets. If you'd like to simulate using your own feature table, follow these steps below. **Note:** estimating parameters on very large OTU tables can be time-consuming.
+
+```{r eval=FALSE}
+## First estimate parameters for our simulation (you can save the parameter as RData to do more simuation in the future)
+para <- EstPara(myotu)  ##myotu is your otu table in data frame format
+
+## Simulate according to your estimated parameters
+N = 206 #sample size
+input.conf <- rnorm(N)
+input.err <- rnorm(N)
+input.diff.otu.pct = NULL
+input.diff.otu.mode = "user_specified"
+user_specified_otu = common_genus[1:10]
+input.covariate.eff.mean = 0.3
+
+nSim = 200
+
+## WGS simulation
+sim_WGS_Genus <- replicate(nSim, list(), simplify = FALSE)
+
+for (i in 1:nSim) {
+  sim_WGS_Genus[[i]] <- SimulateMSeqU(
+    para = para, nSam = N, nOTU = nrow(myotu),
+    # True signal setting
+    diff.otu.pct = input.diff.otu.pct, diff.otu.direct = c("unbalanced"), 
+    diff.otu.mode = input.diff.otu.mode,
+    user_specified_otu = user_specified_otu ,
+    covariate.type = "binary", grp.ratio = 1,
+    covariate.eff.mean = input.covariate.eff.mean, covariate.eff.sd = 0,
+    # Confounder signal setting
+    confounder.type = "none", conf.cov.cor = 0.6,
+    conf.diff.otu.pct = 0, conf.nondiff.otu.pct = 0,
+    confounder.eff.mean = 0, confounder.eff.sd = 0,
+    # Depth setting
+    depth.mu = 10000, depth.theta = 5, depth.conf.factor = 0,
+    cont.conf = input.conf,epsilon = input.err)
+}
+```
+
+## Tutorial {#tutorial}
+
+For the detailed tutorial, you can entered into tutorial from navigation bar. This section provide all the tutorial content summary.
+
+-   [Data simulation](/paper_code/data_simulation.qmd){.internal}
+-   Power analysis and sample size calculation
+-   Concordance measurement for real data
+
+## Contact {#contact}
+
+Any questions or suggestions on `CoMPaSS` are welcomed! Please report it on issues, contact Ruitao Liu ([rxl761\@case.edu](rxl761@case.edu)) or Xi Qiao ([xi.qiao\@hci.utah.edu](xi.qiao@hci.utah.edu)).

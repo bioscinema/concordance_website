@@ -3,16 +3,22 @@ project:
   output-dir: docs
 
 website:
-  title: "ComPASS Paper tutorial"
+  title: "ComPASS"
   navbar:
     left:
-      - href: index.qmd
-        text: ComPASS R package
+      - text: Tutorial
+        menu: 
+          - text: Data simulation
+            href: paper_code/data_simulation.qmd
+          - text: Power analysis & sample size
+            href: paper_code/power_and_sample_size.qmd
+          - text: Concordance measurement
+            href: paper_code/concordance_measurement.qmd
       - href: paper_code/about.qmd
         text: Paper Code Go-through
     right:
       - icon: github
-        href: https://github.com
+        href: https://github.com/bioscinema/concordance
   # sidebar:
   #   style: "docked"
   #   search: true
@@ -36,6 +42,7 @@ website:
       contents:
         - paper_code/simulation.qmd
         - paper_code/Real_data.qmd
+        
 
   page-navigation: false
   

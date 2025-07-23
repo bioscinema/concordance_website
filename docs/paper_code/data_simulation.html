@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ComPASS - CoMPaSS</title>
+<title>ComPASS - Simulate microbiome dataset using user specified parameters</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,22 +57,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -94,7 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -104,7 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">ComPASS</span>
     </a>
   </div>
@@ -120,21 +120,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorial">    
         <li>
-    <a class="dropdown-item" href="./paper_code/data_simulation.html" rel="" target="">
+    <a class="dropdown-item" href="../paper_code/data_simulation.html" rel="" target="">
  <span class="dropdown-text">Data simulation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./paper_code/power_and_sample_size.qmd" rel="" target="">
+    <a class="dropdown-item" href="../paper_code/power_and_sample_size.qmd" rel="" target="">
  <span class="dropdown-text">Power analysis &amp; sample size</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./paper_code/concordance_measurement.qmd" rel="" target="">
+    <a class="dropdown-item" href="../paper_code/concordance_measurement.qmd" rel="" target="">
  <span class="dropdown-text">Concordance measurement</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./paper_code/about.html" rel="" target="">
+    <a class="nav-link" href="../paper_code/about.html" rel="" target="">
  <span class="menu-text">Paper Code Go-through</span></a>
   </li>  
 </ul>
@@ -159,14 +159,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul>
-  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link active" data-scroll-target="#table-of-contents">Table of contents</a>
   <ul class="collapse">
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick Start</a></li>
-  <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial">Tutorial</a></li>
-  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
-  </ul></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   </ul>
 </nav>
     </div>
@@ -175,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CoMPaSS</h1>
+<h1 class="title">Simulate microbiome dataset using user specified parameters</h1>
 </div>
 
 
@@ -190,41 +184,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>CoMPaSS is A Computational Pipeline for Cross-Platform Concordance Assessment and Navigating Study Design in Microbiome Research</p>
-<hr>
-<p>Microbiome research has become an integral component of modern biomedical science, offering insights that uniquely complement other omics. To characterize microbial dysbiosis and its impact on human health, researchers have widely employed next-generation sequencing (NGS) technologies, including 16S rRNA gene sequencing and shotgun metagenomic sequencing. However, these approaches are susceptible to technological artifacts that may introduce method-specific bias into analyses and undermine the replicability of discoveries. Researchers often struggle to select appropriate sequencing methods during the study design stage, as they strive to optimize the budget, taxonomic resolution, and analytical accuracy. While 16S rRNA sequencing is a cost-effective and reliable method that offers acceptable taxonomic resolution, shotgun metagenomic sequencing provides higher-resolution profiles and functional insights, albeit with increased cost. To address this challenge, we introduce CoMPaSS (Concordance of Microbiome Sequencing Platforms and Study Initiation Strategy), a computational pipeline designed to enable precise and head-to-head comparison of six downstream analytical tools in efficacy and to navigate microbiome study design. CoMPaSS offers a framework for evaluating cross-platform concordance in statistical inference across multiple contexts, from community diversity indices to taxonomic profiling, and offers integrated tools for power analysis, sample size estimation, and cost assessment to support comprehensive study planning. Based on an extensive simulation study of in-silico microbiota and three real-world microbiome studies in population-based cohorts (i.e., ORIGIN, IBD, TEDDY), CoMPaSS reveals desirable concordance between platforms at higher taxonomic levels, but significant discrepancies at finer taxonomic resolutions and among rare taxa—highlighting the importance of sequencing platform selection in determining study outcomes.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><embed src="CoMPaSS.pdf" class="img-fluid"></p>
-</figure>
-</div>
-<section id="table-of-contents" class="level1">
-<h1>Table of contents</h1>
-<hr>
-<ol type="1">
-<li><a href="#installation">Installation</a></li>
-<li><a href="#quickstart">Quick Start</a></li>
-<li><a href="#tutorial">Tutorial</a></li>
-<li><a href="#contact">Contact</a></li>
-</ol>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
-<p>You can install <strong>CoMPaSS</strong> R package by:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install devtools if you haven't already</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the package from GitHub</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">"bioscinema/concordance"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load your package</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(CoMPaSS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(CoMPASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="quick-start" class="level2">
-<h2 class="anchored" data-anchor-id="quick-start">Quick Start</h2>
-<p>The following code is a quick example of simulating a microbiome dataset. The function <code>SimulateMSeq()</code> will take the estimate parameters, desired sample size, numbers of OTUs, etc. as input to generate simulation. The ComPaSS package ships with pre-configured simulation parameters so you can quickly generate example datasets. If you’d like to simulate using your own feature table, follow these steps below. <strong>Note:</strong> estimating parameters on very large OTU tables can be time-consuming.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In this tutorial, we will demonstrate how to use <code>CoMPASS</code> to simulate data with user specified parameters if user do not want to do simulation based on predefined parameters in <code>CoMPASS</code> package. If user want to use predefined parameters to do simulation, user can go to the power analysis section.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## First estimate parameters for our simulation (you can save the parameter as RData to do more simuation in the future)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>para <span class="ot">&lt;-</span> <span class="fu">EstPara</span>(myotu)  <span class="do">##myotu is your otu table in data frame format</span></span>
@@ -261,22 +226,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">cont.conf =</span> input.conf,<span class="at">epsilon =</span> input.err)</span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="tutorial" class="level2">
-<h2 class="anchored" data-anchor-id="tutorial">Tutorial</h2>
-<p>For the detailed tutorial, you can entered into tutorial from navigation bar. This section provide all the tutorial content summary.</p>
-<ul>
-<li><a href="./paper_code/data_simulation.html" class="internal">Data simulation</a></li>
-<li>Power analysis and sample size calculation</li>
-<li>Concordance measurement for real data</li>
-</ul>
-</section>
-<section id="contact" class="level2">
-<h2 class="anchored" data-anchor-id="contact">Contact</h2>
-<p>Any questions or suggestions on <code>CoMPaSS</code> are welcomed! Please report it on issues, contact Ruitao Liu (<a href="rxl761@case.edu">rxl761@case.edu</a>) or Xi Qiao (<a href="xi.qiao@hci.utah.edu">xi.qiao@hci.utah.edu</a>).</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

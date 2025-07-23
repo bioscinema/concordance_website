@@ -22,5 +22,11 @@
   },
   "paper_code/Real_data.qmd": {
     "Real_data.html": "ef9ec2d5"
+  },
+  "paper_code/data_simulation.qmd": {
+    "data_simulation.html": "5f15a388"
+  },
+  "paper_code/poweranalysis.qmd": {
+    "poweranalysis.html": "fac101be"
   }
 }
