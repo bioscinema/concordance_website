@@ -1,0 +1,21 @@
+---
+title: "Concordance measurement for real data"
+sidebar: false
+format:
+  html:
+    # turn on page‐local TOC…
+    toc: true
+    # …and put it in the left‐hand sidebar
+    toc-location: right
+    # how many heading levels to include
+    toc-depth: 2
+---
+
+# Concordance measurement
+
+In the CoMPASS paper, we developed different concordance index to measure the concordance for real data. The CoMPASS R package provide not only single level concordance calculation but also dor overall.
+
+```{r eval=FALSE}
+result <- concordance_overall(phy)
+result1 <- concordance_split(phy1,phy2)
+```

@@ -42,8 +42,6 @@ website:
       contents:
         - paper_code/simulation.qmd
         - paper_code/Real_data.qmd
-        
-
   page-navigation: false
   
 
