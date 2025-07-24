@@ -16,7 +16,7 @@ library(CoMPASS)
 ```
 
 
-# Introduction
+# Data Simulation
 
 In this tutorial, we will demonstrate how to use `CoMPASS` to simulate data with user specified parameters if user do not want to do simulation based on predefined parameters in `CoMPASS` package. If user want to use predefined parameters to do simulation, user can go to the power analysis section.
 

@@ -82,8 +82,8 @@ for (i in 1:nSim) {
 For the detailed tutorial, you can entered into tutorial from navigation bar. This section provide all the tutorial content summary.
 
 -   [Data simulation](/paper_code/data_simulation.qmd){.internal}
--   Power analysis and sample size calculation
--   Concordance measurement for real data
+-   [Power analysis and sample size calculation](/paper_code/poweranalysis.qmd){.internal}
+-   [Concordance measurement for real data](/paper_code/concordance_measurement.qmd){.internal}
 
 ## Contact {#contact}
 
